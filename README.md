@@ -28,9 +28,11 @@ console.log(user);
 will never work! This is because user is a promise object, not a data row from the DB. The right way to do it is:
 
 ```javascript
-instagramAPI.userSelf().then(function(user, remaining, limit) {
-    console.log(user);
+instagramAPI.userSelf().then(function(result) {
+    console.log(result.data); // user info
+    console.log(result.limit); // api limit
+    console.log(result.remaining) // api request remaining
 }, function(err){
-	console.log(err);
+	console.log(err); // error info
 });
 ```
