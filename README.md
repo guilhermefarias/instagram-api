@@ -25,7 +25,7 @@ user = instagramAPI.userSelf()
 console.log(user);
 ```
 
-will never work! This is because user is a promise object, not a data row from the DB. The right way to do it is:
+will never work! This is because user is a promise object, not a data from Instagram. The right way to do it is:
 
 ```javascript
 instagramAPI.userSelf().then(function(result) {
