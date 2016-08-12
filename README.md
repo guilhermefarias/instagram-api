@@ -49,32 +49,32 @@ Get information about a user. This endpoint requires the public_content scope if
 
 __Permission Requirements:__ `public_content`
 
-### userSelfMedia()
+### userSelfMedia(params)
  Get the most recent media published by the owner of the access_token.
 
 __Permission Requirements:__ `basic`
 
-### userMedia(userId)
+### userMedia(userId, options)
 Get the most recent media published by a user. This endpoint requires the public_content scope if the user-id is not the owner of the access_token.
 
 __Permission Requirements:__ `public_content`
 
-### userSelfMediaLiked()
+### userSelfMediaLiked(options)
 Get the list of recent media liked by the owner of the access_token.
 
 __Permission Requirements:__  `public_content`
 
-### userSearch(term)
+### userSearch(term, options)
 Get a list of users matching the query.
 
 __Permission Requirements:__ `public_content`
 
-### userSelfFollows()
+### userSelfFollows(options)
 Get the list of users this user follows.
 
 __Permission Requirements:__ `follower_list`
 
-### userSelfFollowedBy()
+### userSelfFollowedBy(options)
  Get the list of users this user is followed by.
 
 __Permission Requirements:__ `follower_list`
@@ -110,7 +110,7 @@ A media object's shortcode can be found in its shortlink URL. An example shortli
 
 __Permission Requirements:__ `basic, public_content`
 
-### mediaSearch(options)
+### mediaSearch(params)
 Search for recent media in a given area.
 
 __Permission Requirements:__ `public_content`
@@ -120,7 +120,7 @@ Get a list of recent comments on a media object. The public_content permission s
 
 __Permission Requirements:__ `basic, public_content`
 
-### postMediaComment(mediaId)
+### postMediaComment(mediaId, text)
 Create a comment on a media object with the following rules:
 * The total length of the comment cannot exceed 300 characters.
 * The comment cannot contain more than 4 hashtags.
@@ -156,7 +156,7 @@ Get information about a tag object.
 
 __Permission Requirements:__ `public_content`
 
-### getMediasByTag(tagName, options)
+### getMediasByTag(tagName, params)
 Get a list of recently tagged media.
 
 __Permission Requirements:__ `public_content`
@@ -171,12 +171,12 @@ Get information about a location.
 
 __Permission Requirements:__ `public_content`
 
-### getMediasByLocation(locationId, options)
+### getMediasByLocation(locationId, params)
 Get a list of recent media objects from a given location.
 
 __Permission Requirements:__ `public_content`
 
-### searchLocations(options)
+### searchLocations(params)
 Search for a location by geographic coordinate.
 
 __Permission Requirements:__ `public_content`
@@ -184,6 +184,9 @@ __Permission Requirements:__ `public_content`
 
 
 ## Changelog
+* Version 1.0.2 - 27/05/2016
+  * Pagination fix
+  * Documentation enhacement
 * Version 1.0.1 - 18/05/2016
   * Adding docs in README
 * Version 1.0.0 - 17/05/2016
