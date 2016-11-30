@@ -187,6 +187,8 @@ __Permission Requirements:__ `public_content`
 
 
 ## Changelog
+* Version 1.0.3 - 14/10/2016
+  * Small fixes
 * Version 1.0.2 - 27/05/2016
   * Pagination fix
   * Documentation enhacement

@@ -1,7 +1,7 @@
 {
   "name": "instagram-api",
   "description": "New Instagram API 2016 for Node.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/guilhermefarias/instagram-api",
   "author": "Guilherme Farias <guilherme@guiky.com.br> (https://github.com/guilhermefarias)",
   "repository": {
