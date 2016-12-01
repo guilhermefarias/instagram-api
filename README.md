@@ -39,88 +39,88 @@ instagramAPI.userSelf().then(function(result) {
 
 ## API Methods
 
-### userSelf([headers])
+### userSelf([requestOptions])
 Get information about the owner of the access_token.
 
 __Permission Requirements:__ `basic`
 
-### user(userId[, headers])
+### user(userId[, requestOptions])
 Get information about a user. This endpoint requires the public_content scope if the user-id is not the owner of the access_token.
 
 __Permission Requirements:__ `public_content`
 
-### userSelfMedia(params[, headers])
+### userSelfMedia(params[, requestOptions])
  Get the most recent media published by the owner of the access_token.
 
 __Permission Requirements:__ `basic`
 
-### userMedia(userId, options[, headers])
+### userMedia(userId, options[, requestOptions])
 Get the most recent media published by a user. This endpoint requires the public_content scope if the user-id is not the owner of the access_token.
 
 __Permission Requirements:__ `public_content`
 
-### userSelfMediaLiked(options[, headers])
+### userSelfMediaLiked(options[, requestOptions])
 Get the list of recent media liked by the owner of the access_token.
 
 __Permission Requirements:__  `public_content`
 
-### userSearch(term, options[, headers])
+### userSearch(term, options[, requestOptions])
 Get a list of users matching the query.
 
 __Permission Requirements:__ `public_content`
 
-### userSelfFollows(options[, headers])
+### userSelfFollows(options[, requestOptions])
 Get the list of users this user follows.
 
 __Permission Requirements:__ `follower_list`
 
-### userSelfFollowedBy(options[, headers])
+### userSelfFollowedBy(options[, requestOptions])
  Get the list of users this user is followed by.
 
 __Permission Requirements:__ `follower_list`
 
-### userSelfRequestedBy([headers])
+### userSelfRequestedBy([requestOptions])
  List the users who have requested this user's permission to follow.
 
 __Permission Requirements:__ `follower_list`
 
-### userRelationship(userId[, headers])
+### userRelationship(userId[, requestOptions])
 Get information about a relationship to another user. Relationships are expressed using the following terms in the response:
 * __outgoing_status:__ Your relationship to the user. Can be 'follows', 'requested', 'none'.
 * __incoming_status:__ A user's relationship to you. Can be 'followed_by', 'requested_by', 'blocked_by_you', 'none'.
 
 __Permission Requirements:__ `follower_list`
 
-### setUserRelationship(userId, action[, headers])
+### setUserRelationship(userId, action[, requestOptions])
 Modify the relationship between the current user and the target user. You need to include an action parameter to specify the relationship action you want to perform. Valid actions are: 'follow', 'unfollow' 'approve' or 'ignore'. Relationships are expressed using the following terms in the response:
 * __outgoing_status:__ Your relationship to the user. Can be 'follows', 'requested', 'none'.
 * __incoming_status:__ A user's relationship to you. Can be 'followed_by', 'requested_by', 'blocked_by_you', 'none'.
 
 __Permission Requirements:__ `relationships`
 
-### media(mediaId[, headers])
+### media(mediaId[, requestOptions])
 Get information about a media object. Use the type field to differentiate between image and video media in the response. You will also receive the user_has_liked field which tells you whether the owner of the access_token has liked this media.
 The public_content permission scope is required to get a media that does not belong to the owner of the access_token.
 
 __Permission Requirements:__ `basic, public_content`
 
-### mediaByShortcode(shortcode[, headers])
+### mediaByShortcode(shortcode[, requestOptions])
 This endpoint returns the same response as GET /media/media-id.
 A media object's shortcode can be found in its shortlink URL. An example shortlink is http://instagram.com/p/tsxp1hhQTG/. Its corresponding shortcode is tsxp1hhQTG.
 
 __Permission Requirements:__ `basic, public_content`
 
-### mediaSearch(params[, headers])
+### mediaSearch(params[, requestOptions])
 Search for recent media in a given area.
 
 __Permission Requirements:__ `public_content`
 
-### mediaComments(mediaId[, headers])
+### mediaComments(mediaId[, requestOptions])
 Get a list of recent comments on a media object. The public_content permission scope is required to get comments for a media that does not belong to the owner of the access_token.
 
 __Permission Requirements:__ `basic, public_content`
 
-### postMediaComment(mediaId, text[, headers])
+### postMediaComment(mediaId, text[, requestOptions])
 Create a comment on a media object with the following rules:
 * The total length of the comment cannot exceed 300 characters.
 * The comment cannot contain more than 4 hashtags.
@@ -131,59 +131,59 @@ The public_content permission scope is required to create comments on a media th
 
 __Permission Requirements:__ `comments`
 
-### removeMediaComment(mediaId, commentId[, headers])
+### removeMediaComment(mediaId, commentId[, requestOptions])
 Remove a comment either on the authenticated user's media object or authored by the authenticated user.
 
 __Permission Requirements:__ `comments`
 
-### mediaLikes(mediaId[, headers])
+### mediaLikes(mediaId[, requestOptions])
 Get a list of users who have liked this media.
 
 __Permission Requirements:__ `basic, public_content`
 
-### postMediaLike(mediaId[, headers])
+### postMediaLike(mediaId[, requestOptions])
 Set a like on this media by the currently authenticated user. The public_content permission scope is required to create likes on a media that does not belong to the owner of the access_token.
 
 __Permission Requirements:__ `likes`
 
-### removeMediaLike(mediaId[, headers])
+### removeMediaLike(mediaId[, requestOptions])
 Remove a like on this media by the currently authenticated user. The public_content permission scope is required to delete likes on a media that does not belong to the owner of the access_token.
 
 __Permission Requirements:__ `likes`
 
-### getTag(tagName[, headers])
+### getTag(tagName[, requestOptions])
 Get information about a tag object.
 
 __Permission Requirements:__ `public_content`
 
-### getMediasByTag(tagName, params[, headers])
+### getMediasByTag(tagName, params[, requestOptions])
 Get a list of recently tagged media.
 
 __Permission Requirements:__ `public_content`
 
-### searchTags(tagName[, headers])
+### searchTags(tagName[, requestOptions])
 Search for tags by name.
 
 __Permission Requirements:__ `public_content`
 
-### getLocation(locationId[, headers])
+### getLocation(locationId[, requestOptions])
 Get information about a location.
 
 __Permission Requirements:__ `public_content`
 
-### getMediasByLocation(locationId, params[, headers])
+### getMediasByLocation(locationId, params[, requestOptions])
 Get a list of recent media objects from a given location.
 
 __Permission Requirements:__ `public_content`
 
-### searchLocations(params[, headers])
+### searchLocations(params[, requestOptions])
 Search for a location by geographic coordinate.
 
 __Permission Requirements:__ `public_content`
 
 ## Details
 
-* __headers__ parameter is optional and almost ever should be ignored.
+* __requestOptions__ parameter is optional and almost ever should be ignored.
 
 
 ## Changelog
